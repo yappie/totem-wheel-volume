@@ -4,10 +4,14 @@ To install patched version on your system, issue following commands at terminal:
 wget http://ftp.acc.umu.se/pub/GNOME/sources/totem/2.32/totem-2.32.0.tar.bz2
 tar jxvf totem-2.32.0.tar.bz2
 cd totem-2.32.0/
-wget -qO- --no-check-certificate https://github.com/yappie/totem-wheel-volume/raw/master/main.patch | patch src/totem-object.c
+wget -qO- --no-check-certificate https://github.com/yappie/totem-wheel-volume/raw/master/main.patch \
+		| patch src/totem-object.c
 ./configure
 make
 sudo make install
+
+# enter your sudo password when asked
+
 cd ..
 rm -rf totem-2.32.0/
 rm -rf totem-2.32.0.tar.bz2
