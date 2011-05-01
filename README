@@ -1,20 +1,23 @@
 Patch for Totem Player to use mouse wheel for volume control.
 
-See "[libaries you're going to need](https://github.com/yappie/totem-wheel-volume/wiki)".
+Prereqs [ubuntu]:
 
-To install patched version on your system, issue following commands at terminal:
+    sudo apt-get -y install libgstreamer-plugins-base0.10-dev intltool libgconf2-dev \
+libgtk2.0-dev libtotem-plparser-dev libunique-dev
 
-wget http://ftp.acc.umu.se/pub/GNOME/sources/totem/2.32/totem-2.32.0.tar.bz2
-tar jxvf totem-2.32.0.tar.bz2
-cd totem-2.32.0/
-wget -qO- --no-check-certificate https://github.com/yappie/totem-wheel-volume/raw/master/main.patch \
+To install patched version on your system, issue following commands at terminal [Ubuntu]:
+
+    wget http://ftp.acc.umu.se/pub/GNOME/sources/totem/2.32/totem-2.32.0.tar.bz2
+    tar jxvf totem-2.32.0.tar.bz2
+    cd totem-2.32.0/
+    wget -qO- --no-check-certificate https://github.com/yappie/totem-wheel-volume/raw/master/main.patch \
 		| patch src/totem-object.c
-./configure
-make
-sudo make install
+    ./configure
+    make
+    sudo make install
 
-# enter your sudo password when asked
-
-cd ..
-rm -rf totem-2.32.0/
-rm -rf totem-2.32.0.tar.bz2
+    # enter your sudo password when asked
+    
+    cd ..
+    rm -rf totem-2.32.0/
+    rm -rf totem-2.32.0.tar.bz2
